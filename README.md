@@ -903,6 +903,8 @@
 </openbox_config>
 ```
 
+
+```
 WIN + Space  == toggle max min window
 WIN + ener =  terminal
 WIN + shift + c == close
@@ -914,3 +916,4 @@ WIN + f1 = desktops
 
 WIN + 1 - vol down
 WIN + 2 - vol up
+```
