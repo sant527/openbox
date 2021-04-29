@@ -916,4 +916,8 @@ WIN + f1 = desktops
 
 WIN + 1 - vol down
 WIN + 2 - vol up
+WIN + S - suspend
+WIN + l - lock
+WIN + d - toggle desktop
+
 ```
