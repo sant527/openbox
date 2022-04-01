@@ -921,3 +921,9 @@ WIN + l - lock
 WIN + d - toggle desktop
 
 ```
+
+How to add calendar in tint2
+
+add this line in the end of tint2rc inside .config/tint2
+
+clock_lclick_command = gsimplecal
