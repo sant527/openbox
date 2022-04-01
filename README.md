@@ -934,6 +934,14 @@ or
 
 ![](https://i.imgur.com/c27DRws.png)
 
-ALso
+# horizontal
 
 ![](https://i.imgur.com/ELn2EPJ.png)
+
+![](https://i.imgur.com/mwR3PYQ.png)
+
+![](https://i.imgur.com/reL7EXT.png)
+
+# Vertical
+
+![](https://i.imgur.com/Dgq9mGv.png)
