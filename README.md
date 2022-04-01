@@ -953,19 +953,25 @@ sudo pacman -S papirus-icon-theme
 ```
 
 # Change theme 
-
+```
 lxappearance
-
+```
 ![](https://i.imgur.com/tloMP1U.png)
 
 # change icon theme papirus dark
-
+```
 lxappearance
-
+```
 ![](https://i.imgur.com/mTvfImQ.png)
 
 # Change the default menu right click
-
+```
 $ obmenu-generator -i -p
 :: A dynamic menu has been successfully generated!
+```
 
+# configure openbox
+```
+obconf
+```
+![](https://i.imgur.com/HoZ9eOR.png)
