@@ -998,3 +998,82 @@ $ xinput get-button-map 10
 
 # replace 2 with 1 (to make 2 act as left click)
 $ xinput set-button-map 10 1 1 3 4 5 6 7
+```
+
+# touchpad single tap
+
+```
+The tool for this kind of options is xinput. The property name depends on your touchpad model, it may be something like
+
+xinput set-prop "SynPS/2 Synaptics TouchPad" "Synaptics Tap Action" 0
+
+Run xinput list to see the names of available devices and xinput list-props "the device name" to list properties of a device.
+
+[  6:29PM ]  [ administrator@NWLT2218:~ ]
+ $ xinput list
+⎡ Virtual core pointer                    	id=2	[master pointer  (3)]
+⎜   ↳ Virtual core XTEST pointer              	id=4	[slave  pointer  (2)]
+⎜   ↳ MSFT0001:01 04F3:3140 Mouse             	id=9	[slave  pointer  (2)]
+⎜   ↳ MSFT0001:01 04F3:3140 Touchpad          	id=10	[slave  pointer  (2)]
+⎣ Virtual core keyboard                   	id=3	[master keyboard (2)]
+    ↳ Virtual core XTEST keyboard             	id=5	[slave  keyboard (3)]
+    ↳ Video Bus                               	id=6	[slave  keyboard (3)]
+    ↳ Power Button                            	id=7	[slave  keyboard (3)]
+    ↳ Integrated Camera: Integrated C         	id=8	[slave  keyboard (3)]
+    ↳ Ideapad extra buttons                   	id=11	[slave  keyboard (3)]
+[  6:29PM ]  [ administrator@NWLT2218:~ ]
+ $ xinput list-props "MSFT0001:01 04F3:3140 Touchpad"
+Device 'MSFT0001:01 04F3:3140 Touchpad':
+	Device Enabled (188):	1
+	Coordinate Transformation Matrix (190):	1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000
+	libinput Tapping Enabled (339):	0
+	libinput Tapping Enabled Default (340):	0
+	libinput Tapping Drag Enabled (341):	1
+	libinput Tapping Drag Enabled Default (342):	1
+	libinput Tapping Drag Lock Enabled (343):	0
+	libinput Tapping Drag Lock Enabled Default (344):	0
+	libinput Tapping Button Mapping Enabled (345):	1, 0
+	libinput Tapping Button Mapping Default (346):	1, 0
+	libinput Natural Scrolling Enabled (323):	0
+	libinput Natural Scrolling Enabled Default (324):	0
+	libinput Disable While Typing Enabled (347):	1
+	libinput Disable While Typing Enabled Default (348):	1
+	libinput Scroll Methods Available (325):	1, 1, 0
+	libinput Scroll Method Enabled (326):	1, 0, 0
+	libinput Scroll Method Enabled Default (327):	1, 0, 0
+	libinput Click Methods Available (349):	1, 1
+	libinput Click Method Enabled (350):	1, 0
+	libinput Click Method Enabled Default (351):	1, 0
+	libinput Middle Emulation Enabled (352):	0
+	libinput Middle Emulation Enabled Default (353):	0
+	libinput Accel Speed (330):	0.000000
+	libinput Accel Speed Default (331):	0.000000
+	libinput Left Handed Enabled (335):	0
+	libinput Left Handed Enabled Default (336):	0
+	libinput Send Events Modes Available (308):	1, 1
+	libinput Send Events Mode Enabled (309):	0, 0
+	libinput Send Events Mode Enabled Default (310):	0, 0
+	Device Node (311):	"/dev/input/event7"
+	Device Product ID (312):	1267, 12608
+	libinput Drag Lock Buttons (337):	<no items>
+	libinput Horizontal Scroll Enabled (338):	1
+
+
+enable tapping from touchpad
+
+xinput set-prop 10 339 1
+
+enable middle click (double tap from touchpad
+
+xinput set-prop 10 352 1 
+
+```
+
+# Volume 
+
+```
+pactl set-sink-volume @DEFAULT_SINK@ -10%
+
+pactl set-sink-volume @DEFAULT_SINK@ +10%
+
+```
