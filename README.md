@@ -975,3 +975,26 @@ $ obmenu-generator -i -p
 obconf
 ```
 ![](https://i.imgur.com/HoZ9eOR.png)
+
+
+# touchpad remove middle click
+
+```
+ $ xinput list 
+⎡ Virtual core pointer                    	id=2	[master pointer  (3)]
+⎜   ↳ Virtual core XTEST pointer              	id=4	[slave  pointer  (2)]
+⎜   ↳ MSFT0001:01 04F3:3140 Mouse             	id=9	[slave  pointer  (2)]
+⎜   ↳ MSFT0001:01 04F3:3140 Touchpad          	id=10	[slave  pointer  (2)]
+⎣ Virtual core keyboard                   	id=3	[master keyboard (2)]
+    ↳ Virtual core XTEST keyboard             	id=5	[slave  keyboard (3)]
+    ↳ Video Bus                               	id=6	[slave  keyboard (3)]
+    ↳ Power Button                            	id=7	[slave  keyboard (3)]
+    ↳ Integrated Camera: Integrated C         	id=8	[slave  keyboard (3)]
+    ↳ Ideapad extra buttons                   	id=11	[slave  keyboard (3)]
+    ↳ AT Translated Set 2 keyboard            	id=12	[slave  keyboard (3)]
+
+$ xinput get-button-map 10
+1 2 3 4 5 6 7 
+
+# replace 2 with 1 (to make 2 act as left click)
+$ xinput set-button-map 10 1 1 3 4 5 6 7
