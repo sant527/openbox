@@ -1077,3 +1077,15 @@ pactl set-sink-volume @DEFAULT_SINK@ -10%
 pactl set-sink-volume @DEFAULT_SINK@ +10%
 
 ```
+
+# install wallpaper else we will see windows stutter
+
+```
+sudo apt install nitrogen
+
+and go into a folder where there are images and do
+
+nitroge .
+
+and select a wallpaper and thats is
+```
