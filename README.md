@@ -1147,5 +1147,18 @@ and select a wallpaper and thats is
 # screen brightness
 
 ```
+sudo apt install brightnessctl brightness-udev
 
+sudo apt install xcalib
+
+sudo brightnessctl set 3%-
+
+sudo brightnessctl set 3%+
+
+sudo brightnessctl set 100%
+
+
+xcalib -contrast 95 -alter
+
+xcalib -clear
 ```
