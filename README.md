@@ -27,7 +27,7 @@
        mouse into it, also raise the window -->
   </focus>
   <placement>
-    <policy>UnderMouse</policy>
+    <policy>Smart</policy>
     <!-- 'Smart' or 'UnderMouse' -->
     <center>yes</center>
     <!-- whether to place windows in the center of the free area found or
@@ -289,7 +289,6 @@
       <action name="FocusToBottom"/>
       <action name="Unfocus"/>
     </keybind>
-
     <!-- Keybindings for window switching -->
     <keybind key="W-Tab">
       <action name="NextWindow">
@@ -349,13 +348,19 @@
         <command>mate-terminal</command>
       </action>
     </keybind>
+    <!-- move window to next/previous monitor -->
+    <keybind key="S-W-m">
+      <action name="MoveResizeTo">
+        <monitor>next</monitor>
+      </action>
+    </keybind>
     <keybind key="W-v">
       <action name="Execute">
         <startupnotify>
           <enabled>true</enabled>
           <name>Konqueror</name>
         </startupnotify>
-        <command>subl -a ~/.public_html ~/.public_html/.vlist -n</command>
+        <command>sh /home/administrator/.public_html/open_test.sh</command>
       </action>
     </keybind>
     <keybind key="W-l">
@@ -364,7 +369,7 @@
           <enabled>true</enabled>
           <name>Lock</name>
         </startupnotify>
-        <command>sh /home/simha/.public_html/lock.sh</command>
+        <command>sh /home/administrator/.public_html/lock.sh</command>
       </action>
     </keybind>
     <keybind key="W-l">
@@ -373,7 +378,7 @@
           <enabled>true</enabled>
           <name>Lock</name>
         </startupnotify>
-        <command>sh /home/simha/.public_html/suspend.sh</command>
+        <command>sh /home/administrator/.public_html/suspend.sh</command>
       </action>
     </keybind>
     <keybind key="W-1">
@@ -382,7 +387,7 @@
           <enabled>true</enabled>
           <name>Konqueror</name>
         </startupnotify>
-        <command>sh /home/simha/.public_html/voldown.sh</command>
+        <command>sh /home/administrator/.public_html/voldown.sh</command>
       </action>
     </keybind>
     <keybind key="W-2">
@@ -391,7 +396,43 @@
           <enabled>true</enabled>
           <name>Konqueror</name>
         </startupnotify>
-        <command>sh /home/simha/.public_html/volup.sh</command>
+        <command>sh /home/administrator/.public_html/volup.sh</command>
+      </action>
+    </keybind>
+    <keybind key="W-3">
+      <action name="Execute">
+        <startupnotify>
+          <enabled>true</enabled>
+          <name>Konqueror</name>
+        </startupnotify>
+        <command>sudo brightnessctl set 3%-</command>
+      </action>
+    </keybind>
+    <keybind key="W-4">
+      <action name="Execute">
+        <startupnotify>
+          <enabled>true</enabled>
+          <name>Konqueror</name>
+        </startupnotify>
+        <command>sudo brightnessctl set 3%+</command>
+      </action>
+    </keybind>
+    <keybind key="W-5">
+      <action name="Execute">
+        <startupnotify>
+          <enabled>true</enabled>
+          <name>Konqueror</name>
+        </startupnotify>
+        <command>sh -c 'xcalib -clear; sudo brightnessctl set 100%'</command>
+      </action>
+    </keybind>
+    <keybind key="W-6">
+      <action name="Execute">
+        <startupnotify>
+          <enabled>true</enabled>
+          <name>Konqueror</name>
+        </startupnotify>
+        <command>xcalib -contrast 95 -alter</command>
       </action>
     </keybind>
     <keybind key="C-A-s">
@@ -437,7 +478,7 @@
           <enabled>true</enabled>
           <name>Lock</name>
         </startupnotify>
-        <command>sh /home/simha/.public_html/wmctrl-switch-by-application.sh</command>
+        <command>sh /home/administrator/.public_html/wmctrl-switch-by-application.sh</command>
       </action>
     </keybind>
   </keyboard>
@@ -446,7 +487,7 @@
     <!-- number of pixels the mouse must move before a drag begins -->
     <doubleClickTime>500</doubleClickTime>
     <!-- in milliseconds (1000 = 1 second) -->
-    <screenEdgeWarpTime>400</screenEdgeWarpTime>
+    <screenEdgeWarpTime>0</screenEdgeWarpTime>
     <!-- Time before changing desktops when the pointer touches the edge of the
        screen while moving a window, in milliseconds (1000 = 1 second).
        Set this to 0 to disable warping -->
@@ -895,12 +936,12 @@
 
   # end of the example
 -->
-
-  <application class="*">
-    <focus>yes</focus>
-  </application>
+    <application class="*">
+      <focus>yes</focus>
+    </application>
   </applications>
 </openbox_config>
+
 ```
 
 
@@ -1088,4 +1129,23 @@ and go into a folder where there are images and do
 nitroge .
 
 and select a wallpaper and thats is
+```
+
+
+
+# autostart openbox
+
+```
+(. /home/administrator/django_video_downloader/.venv/bin/activate &&  cd /home/administrator/django_video_downloader/download && ./manage.py runserver 0.0.0.0:8000) &
+(xinput set-button-map 10 1 1 3 4 5 6 7) &
+(xinput set-prop 10 339 1) &
+(xinput set-prop 10 352 1) &
+(tint2) &
+(nitrogen --restore) &
+```
+
+# screen brightness
+
+```
+
 ```
