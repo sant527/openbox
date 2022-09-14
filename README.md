@@ -1161,4 +1161,13 @@ sudo brightnessctl set 100%
 xcalib -contrast 95 -alter
 
 xcalib -clear
+
+
+
+xrandr | grep " connected" | cut -f1 -d " "
+
+xrandr --output [display-name] --brightness [level of illumination]
+
+xrandr --output VGA-1 --brightness 0.5
+
 ```
